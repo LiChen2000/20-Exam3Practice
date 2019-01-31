@@ -211,7 +211,7 @@ def big_letters(sequence_of_sequences):
     Precondition:  the given argument is a sequence of sequences.
     """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
     ###########################################################################
@@ -233,13 +233,14 @@ def big_letters(sequence_of_sequences):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:  12 minutes.
     # -------------------------------------------------------------------------
-    str = ''
+    ret = ''
     for k in range(len(sequence_of_sequences)):
-        for i in range(len(sequence_of_sequences[k])):
-            if type(sequence_of_sequences[k][i]) is str:
-                if sequence_of_sequences[k][i].isupper():
-                    str = str + str(sequence_of_sequences[k][i])
-    return str
+        if type(sequence_of_sequences[k]) is str:
+            for i in range(len(sequence_of_sequences[k])):
+                if type(sequence_of_sequences[k][i]) is str:
+                    if sequence_of_sequences[k][i].isupper():
+                        ret = ret + sequence_of_sequences[k][i]
+    return ret
 
 
 
